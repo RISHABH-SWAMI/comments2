@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import CommentDetail from "./components/CommentDetail.js";
+import Card from "./components/Card.js";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const App = () => {
+  return (
+    <div className="container mt-3">
+      <Card>
+        <CommentDetail
+          name="Alex"
+          time="Today at 5:00 PM"
+          post="Great Blog Post!"
+        />
+      </Card>
+      <Card>
+        <CommentDetail
+          name="Joe"
+          time="Yesterday at 9:00 AM"
+          post="Nice Post!"
+        />
+      </Card>
+      <Card>
+        <CommentDetail
+          name="Mary"
+          time="2 days ago at 8:00 PM"
+          post="Great Post!"
+        />
+      </Card>
+    </div>
+  );
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(<App />, document.querySelector("#root"));
